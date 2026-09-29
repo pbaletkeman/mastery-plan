@@ -16,7 +16,6 @@ Token bucket math
 Queue + worker threads
 ---
 🧠 Category 4 — Concurrency‑focused micro‑design
-These align perfectly with your strengths.
 
 13. Design a Thread‑Safe Counter
 Locks, CAS, atomic operations.
@@ -225,11 +224,11 @@ Used for: intervals, anagrams, grouping.
 🔡 Essential String Problems
 
 1. Reverse Words
-Given "the sky is blue" → "blue is sky the"  
+Given "the sky is blue" → "blue is sky the"
 Tests: pointer manipulation, trimming, splitting.
 
 2. String Compression
-aabccc → a2b1c3  
+aabccc → a2b1c3
 Tests: run‑length encoding, counting, edge cases.
 
 3. First Non‑Repeating Character
@@ -301,64 +300,64 @@ Graph‑like data models
 ⭐ Level 1 — Warm‑up (core pattern)
 These test whether you can implement the basic backtracking template cleanly.
 
-Generate all permutations of a string  
-Input: "abc"  
+Generate all permutations of a string
+Input: "abc"
 Output: ["abc","acb","bac","bca","cab","cba"]
 
-Generate permutations of an integer array  
-Input: [1,2,3]  
+Generate permutations of an integer array
+Input: [1,2,3]
 Output: all 3! permutations
 
-Count permutations instead of listing them  
-Input: n = 5  
-Output: 120  
+Count permutations instead of listing them
+Input: n = 5
+Output: 120
 (Tests whether you understand factorial growth)
 
 ⭐ Level 2 — Interview‑standard permutation problems
 These are the ones companies actually ask.
 
-Next permutation  
-Input: [1,2,3] → Output: [1,3,2]  
-Input: [3,2,1] → Output: [1,2,3]  
+Next permutation
+Input: [1,2,3] → Output: [1,3,2]
+Input: [3,2,1] → Output: [1,2,3]
 (Tests lexicographic reasoning)
 
-Permutations with duplicates  
-Input: [1,1,2]  
-Output: ["112","121","211"]  
+Permutations with duplicates
+Input: [1,1,2]
+Output: ["112","121","211"]
 (Tests pruning + sorting + skip‑duplicate logic)
 
-K‑th permutation  
-Input: n=4, k=9  
-Output: "2314"  
+K‑th permutation
+Input: n=4, k=9
+Output: "2314"
 (Tests factorial number system)
 
 ⭐ Level 3 — Harder backtracking variations
 These test whether you can adapt the permutation template to constraints.
 
-Permutations of length k  
-Input: nums=[1,2,3], k=2  
+Permutations of length k
+Input: nums=[1,2,3], k=2
 Output: ["12","13","21","23","31","32"]
 
-Letter case permutations  
-Input: "a1b"  
-Output: ["a1b","a1B","A1b","A1B"]  
+Letter case permutations
+Input: "a1b"
+Output: ["a1b","a1B","A1b","A1B"]
 (Tests branching on characters)
 
-Phone keypad permutations  
-Input: "23"  
-Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]  
+Phone keypad permutations
+Input: "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 (Tests mapping + recursion)
 
 ⭐ Level 4 — Advanced (if they want to push you)
 These are rare but show mastery.
 
-Permutation sequence with constraints  
+Permutation sequence with constraints
 Example: “Generate permutations where no two adjacent numbers differ by 1.”
 
-Permutation of a linked list  
+Permutation of a linked list
 Tests pointer manipulation + recursion.
 
-Permutation of multiset with frequency map  
+Permutation of multiset with frequency map
 Tests using a hashmap instead of sorting + skipping.
 ---
 
