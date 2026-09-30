@@ -3,6 +3,7 @@
 > Note: the "6 patterns" were the core primitives, not the full universe. Each item begins with a Guided Link.
 >
 > The original six foundational backend patterns:
+>
 > - Global mutex + condition variable
 > - Counter + queue + fairness flag
 > - Append-only list + binary search
