@@ -4,9 +4,9 @@ import java.util.concurrent.locks.ReentrantLock;
 
 class BlockingQueue {
     var queue: MutableList<String>  =  mutableListOf<String>()
-    set(value) {
-        field = value
-    }
+    // set(value) {
+    //     field = value
+    // }
 
     val MAX_SIZE = 50
     val lock: ReentrantLock = ReentrantLock()
@@ -18,10 +18,10 @@ class BlockingQueue {
         lock.lock()
         try {
             while (queue.size >= MAX_SIZE) {
-                notFull.await()
+                notEmpty.await()
             }
             queue.add(item)
-            notEmpty.signal()
+            notFull.signal()
         } catch (e: Exception) {
             e.printStackTrace()
         } finally {
@@ -34,10 +34,10 @@ class BlockingQueue {
         lock.lock()
         try{
             while (queue.size == 0){
-                notEmpty.await()
+                notFull.await()
             }
             item = queue.removeAt(0)
-            notFull.signal()
+            notEmpty.signal()
         } catch (e: Exception){
             e.printStackTrace()
         } finally {

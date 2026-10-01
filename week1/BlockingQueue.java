@@ -13,13 +13,13 @@ public class BlockingQueue {
     final Condition notFull = lock.newCondition();
     final Condition notEmpty = lock.newCondition();
 
-    public List<String> getQueue() {
-        return queue;
-    }
+    // public List<String> getQueue() {
+    //     return queue;
+    // }
 
-    public void setQueue(List<String> queue) {
-        this.queue = queue;
-    }
+    // public void setQueue(List<String> queue) {
+    //     this.queue = queue;
+    // }
 
     public BlockingQueue(){
         queue = new ArrayList<>();
@@ -33,10 +33,10 @@ public class BlockingQueue {
         lock.lock();
         try {
             while (queue.size() >= MAX_SIZE){
-                notEmpty.await();
+                notFull.await();
             }
             queue.add(item);
-            notFull.signal();
+            notEmpty.signal();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -49,10 +49,10 @@ public class BlockingQueue {
         lock.lock();
         try {
             while (queue.size() == 0){
-                notFull.await();
+                notEmpty.await();
             }
-            item = queue.removeFirst();
-            notEmpty.signal();
+            item = queue.remove(0);
+            notFull.signal();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
