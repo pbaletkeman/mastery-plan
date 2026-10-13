@@ -2,6 +2,7 @@
 fun tracker(records: MutableList<String>, s: String, used: BooleanArray, path: String) {
     if (s.length == path.length) {
         records.add(path)
+        return
     }
 
     for (i in s.indices) {
